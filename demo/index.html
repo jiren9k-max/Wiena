@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.home">WIENA | Prirodni tekstil za sporiji život</title>
+  <meta name="description" content="Posteljina od kamenom pranog lana, kašmirski pledovi, peškiri od turskog pamuka i tihi predmeti za dom. Tkano u Evropi, dizajnirano u Beču.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;350;400;450;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home" class="has-hero">
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__slides" id="heroSlides"></div>
+    <div class="hero__glow"></div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <div class="hero__captions" id="heroCaptions"></div>
+        <div class="hero__ctas">
+          <a href="shop.html" class="btn btn--light"><span data-i18n="hero.cta">Pogledajte kolekciju</span> <svg class="arrow" viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+          <a href="#story" class="btn btn--light" style="border-color:rgba(244,237,225,.35)" data-i18n="hero.story">Naša priča</a>
+        </div>
+        <div class="hero__dots" id="heroDots"></div>
+      </div>
+      <div class="hero__side">
+        <p class="eyebrow" style="color:rgba(244,237,225,.6)" data-i18n="hero.season">Jesen / Zima 2026</p>
+        <p class="serif" data-i18n="hero.quote">„Ono što se pravi polako, pravi se da traje.“</p>
+      </div>
+    </div>
+    <div class="scroll-cue"><span class="eyebrow" style="color:inherit;font-size:9px" data-i18n="hero.scroll">Skrolajte</span><i></i></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true"><div class="marquee__track" id="marquee"></div></div>
+
+  <!-- ROOMS -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-reveal data-i18n="rooms.k">Kupujte po prostoriji</p>
+        <h2 data-split data-i18n="rooms.t">Svaka prostorija, <em class="italic">omekšana</em></h2>
+      </div>
+      <p data-reveal style="--i:2" data-i18n="rooms.p">Od spavaće sobe do trpezarijskog stola: prirodna vlakna, tiho lijepe boje i izrada koju osjetite pod prstima.</p>
+    </div>
+    <div class="rooms" id="rooms"></div>
+  </section>
+
+  <!-- THE EDIT CAROUSEL -->
+  <section class="section--tight" style="padding-top:0">
+    <div class="sec-head wrap">
+      <div>
+        <p class="eyebrow" data-reveal data-i18n="edit.k">Jesenska selekcija</p>
+        <h2 data-split data-i18n="edit.t">Za <em class="italic">duge večeri</em></h2>
+      </div>
+      <div class="carousel-nav" data-reveal style="--i:2">
+        <button class="circle-btn js-prev" aria-label="Prethodno" data-i18n-aria="edit.prev"><svg viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M22 5H1M5 1L1 5l4 4"/></svg></button>
+        <button class="circle-btn js-next" aria-label="Sljedeće" data-i18n-aria="edit.next"><svg viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M0 5h21M17 1l4 4-4 4"/></svg></button>
+      </div>
+    </div>
+    <div class="carousel" id="edit"></div>
+    <div class="progress-line"><i id="editProgress"></i></div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section wrap" id="story">
+    <div class="story">
+      <div class="story__media">
+        <div class="story__clip" data-reveal="clip"><div class="art" id="storyArt" data-parallax="0.12"></div></div>
+        <div class="story__float" data-reveal="scale" style="--i:3"><div class="art" id="storyArt2"></div></div>
+      </div>
+      <div class="story__text">
+        <p class="eyebrow" data-reveal data-i18n="story.k">Naša priča · Od 2026.</p>
+        <h2 class="h2" data-split data-i18n="story.t">Tkano polako, <em class="italic">u Evropi</em></h2>
+        <p class="lede" data-reveal style="--i:1" data-i18n="story.lede">Wiena je počela s jednom balom belgijskog lana i malim studijom kod Kohlmarkta u Beču.</p>
+        <p data-reveal style="--i:2" data-i18n="story.p">Radimo s dvanaest porodičnih tkaonica u Portugalu, Litvaniji, Škotskoj i Belgiji.</p>
+        <div class="stats" data-reveal style="--i:3">
+          <div class="stat"><b data-count="100">0</b><span data-i18n="story.s1">% prirodnih vlakana</span></div>
+          <div class="stat"><b data-count="12">0</b><span data-i18n="story.s2">porodičnih tkaonica</span></div>
+          <div class="stat"><b data-count="38">0</b><span data-i18n="story.s3">zanatlija</span></div>
+        </div>
+        <a href="shop.html" class="link-arrow" data-reveal style="--i:4"><span data-i18n="story.cta">Otkrijte kolekciju</span> <svg viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS STICKY -->
+  <section class="materials" id="materials">
+    <div class="materials__track">
+      <div class="materials__sticky">
+        <div class="materials__left">
+          <div>
+            <p class="eyebrow" style="color:rgba(244,237,225,.55)" data-i18n="mat.k">Vlakna</p>
+          </div>
+          <ul class="materials__list" id="matList"></ul>
+          <div>
+            <div class="materials__desc" id="matDesc"></div>
+            <div class="materials__counter" id="matCounter">01 / 05</div>
+            <div class="materials__bar"><i id="matBar"></i></div>
+          </div>
+        </div>
+        <div class="materials__right" id="matImgs"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BESTSELLERS -->
+  <section class="section wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow" data-reveal data-i18n="best.k">Najomiljenije</p>
+        <h2 data-split data-i18n="best.t">Naši <em class="italic">bestseleri</em></h2>
+      </div>
+      <a href="shop.html" class="link-arrow" data-reveal style="--i:2"><span data-i18n="best.all">Pogledajte svih 100 proizvoda</span> <svg viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+    </div>
+    <div class="grid" id="best" style="--cols:4"></div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="section wrap" style="padding-top:0">
+    <div class="quote">
+      <p class="eyebrow" data-reveal data-i18n="quote.k">Nekoliko riječi o lanu</p>
+      <p class="quote__text" id="quote" data-i18n="quote.t">Lan je jedina tkanina koja postaje <em>ljepša</em> što više živite s njom.</p>
+      <p class="eyebrow" data-reveal data-i18n="quote.by">Osnivač, Wiena</p>
+    </div>
+  </section>
+
+  <!-- LOOKBOOK -->
+  <section class="section--tight wrap" style="padding-top:0">
+    <div class="lookbook" id="lookbook"></div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section--tight wrap">
+    <div class="values" id="values"></div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="art" id="nlArt"></div>
+    <p class="eyebrow" style="color:rgba(244,237,225,.6)" data-reveal data-i18n="nl.k">Wiena pismo</p>
+    <h2 data-split data-i18n="nl.t">Spore vijesti, <em class="italic">jednom mjesečno</em></h2>
+    <p data-reveal style="--i:2" data-i18n="nl.p">Nove kolekcije, priče iz tkaonica i rani pristup sezonskoj rasprodaji.</p>
+    <form class="nl-form" id="nlForm" data-reveal style="--i:3">
+      <input type="email" placeholder="Vaša e-mail adresa" data-i18n-ph="nl.ph" required aria-label="E-mail">
+      <button type="submit"><span data-i18n="nl.btn">Prijavite se</span> <svg viewBox="0 0 22 10" width="22" fill="none" stroke="currentColor"><path d="M0 5h21M17 1l4 4-4 4"/></svg></button>
+    </form>
+  </section>
+
+</main>
+<script src="js/demo.js"></script>
+<script src="/api/catalog.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/products.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/art.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

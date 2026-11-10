@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WIENA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;350;400;450;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="product">
+<main>
+  <div class="wrap" style="padding-top:26px"><div class="crumbs" id="crumbs" data-reveal="fade"></div></div>
+  <section class="pdp" id="pdp"></section>
+
+  <section class="section wrap" id="pairs">
+    <div class="sec-head">
+      <div><p class="eyebrow" data-reveal data-i18n="pdp.pairK">Upotpunite prostoriju</p><h2 data-split data-i18n="pdp.pairT"><em class="italic">Savršeno</em> se slaže s</h2></div>
+    </div>
+    <div class="grid" id="pairGrid" style="--cols:4"></div>
+  </section>
+
+  <section class="section--tight wrap" style="padding-top:0">
+    <div class="sec-head">
+      <div><p class="eyebrow" data-reveal data-i18n="pdp.moreK">Još iz kolekcije</p><h2 data-split id="moreTitle"></h2></div>
+      <a href="shop.html" class="link-arrow" id="moreLink" data-reveal><span data-i18n="pdp.viewAll">Pogledajte sve</span> <svg viewBox="0 0 22 10" fill="none" stroke="currentColor"><path d="M0 5h21M17 1l4 4-4 4"/></svg></a>
+    </div>
+    <div class="grid" id="moreGrid" style="--cols:4"></div>
+  </section>
+</main>
+<script src="js/demo.js"></script>
+<script src="/api/catalog.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/products.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/art.js"></script>
+<script src="js/app.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

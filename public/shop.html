@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kolekcija | WIENA</title>
+  <meta name="description" content="Lanena posteljina, peškiri, pledovi, jastuci, stolni tekstil i mirisi za dom od prirodnih vlakana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;350;400;450;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="shop">
+<main>
+  <section class="shop-hero">
+    <div class="art" id="shopArt"></div>
+    <div class="crumbs" data-reveal="fade" id="crumbs"></div>
+    <div class="shop-hero__inner">
+      <h1 id="shopTitle"></h1>
+      <p id="shopBlurb" data-reveal style="--i:3"></p>
+    </div>
+  </section>
+
+  <div class="cat-tabs" id="catTabs" data-reveal="fade" style="--i:2"></div>
+
+  <div class="toolbar">
+    <div class="toolbar__left">
+      <button class="tb js-filters"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M10 18h4"/></svg> <span data-i18n="shop.filter">Filtriraj</span> <span id="filterN"></span></button>
+      <span class="count-label" id="countLabel"></span>
+    </div>
+    <div class="toolbar__right">
+      <div class="density" id="density">
+        <button data-cols="2" aria-label="2 columns"><i style="grid-template-columns:repeat(2,6px);grid-template-rows:repeat(2,6px)"><b></b><b></b><b></b><b></b></i></button>
+        <button data-cols="3" aria-label="3 columns"><i style="grid-template-columns:repeat(3,4px);grid-template-rows:repeat(2,6px)"><b></b><b></b><b></b><b></b><b></b><b></b></i></button>
+        <button data-cols="4" class="on" aria-label="4 columns"><i style="grid-template-columns:repeat(4,3px);grid-template-rows:repeat(2,6px)"><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i></button>
+      </div>
+      <select id="sort" aria-label="Sortiraj" data-i18n-aria="shop.sortLabel">
+        <option value="featured" data-i18n="shop.sort.featured">Istaknuto</option>
+        <option value="new" data-i18n="shop.sort.new">Najnovije</option>
+        <option value="price-asc" data-i18n="shop.sort.price-asc">Cijena: od najniže</option>
+        <option value="price-desc" data-i18n="shop.sort.price-desc">Cijena: od najviše</option>
+        <option value="rating" data-i18n="shop.sort.rating">Najbolje ocijenjeno</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="active-filters" id="activeFilters"></div>
+
+  <div class="shop-grid-wrap">
+    <div class="grid shop-grid" id="grid" style="--cols:4"></div>
+    <div class="load-more" id="loadMore"></div>
+  </div>
+
+  <aside class="drawer drawer--left" id="filters" aria-label="Filteri" data-i18n-aria="shop.refine">
+    <div class="drawer__head"><h3 data-i18n="shop.refine">Filteri</h3><button class="close-x js-close" aria-label="Zatvori" data-i18n-aria="cart.close"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor"><path d="M1 1l14 14M15 1L1 15"/></svg></button></div>
+    <div class="drawer__body" id="filterBody"></div>
+    <div class="drawer__foot" style="display:grid;grid-template-columns:1fr 1.4fr;gap:10px">
+      <button class="btn js-clear" data-i18n="shop.clear">Očisti</button>
+      <button class="btn btn--solid js-close" id="applyBtn">Prikaži rezultate</button>
+    </div>
+  </aside>
+  <div style="height:120px"></div>
+</main>
+<script src="/api/catalog.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/products.js"></script>
+<script src="js/photos.js"></script>
+<script src="js/art.js"></script>
+<script src="js/app.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

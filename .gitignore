@@ -1,0 +1,10 @@
+# Instalirani dodaci (npm install ih vrati)
+node_modules/
+
+# Baza, slike, emailovi i lozinke — NIKAD u git
+data/
+.env
+*.log
+
+# Postavke aplikacije na ovom računaru
+.claude/
