@@ -186,13 +186,17 @@
     document.body.insertAdjacentHTML('beforeend', cart + search +
       (contact.ok ? `<div class="chat" id="chat">
         <div class="chat__panel" role="dialog" aria-label="${t('chat.open')}">
-          <p class="chat__t">${t('chat.t')}</p><p class="chat__s">${t('chat.s')}</p>
+          <div class="chat__who"><img src="img/mascot-avatar.png" alt="" width="52" height="52"><p class="chat__t">${t('chat.t')}</p></div><p class="chat__s">${t('chat.s')}</p>
           <a class="chat__opt" href="${contact.wa}" target="_blank" rel="noopener"><i style="background:#25d366"></i>${t('chat.wa')}</a>
           <a class="chat__opt" href="${contact.viber}"><i style="background:#7360f2"></i>${t('chat.viber')}</a>
           <a class="chat__opt" href="${contact.tel}">${ICON.phone}${t('chat.call')} · ${esc(contact.phone)}</a>
           <p class="chat__h">${t('chat.hours')}</p>
         </div>
         <button class="chat__btn" aria-label="${t('chat.open')}" aria-expanded="false">${ICON.chat}${ICON.close}</button>
+      </div>
+      <div class="mascot" id="mascot" aria-hidden="true">
+        <div class="mascot__bubble"><button class="mascot__x" data-mascot-hide aria-label="${t('mascot.hide')}">${ICON.close}</button>${t('mascot.hi')}<b>${t('mascot.cta')} ${ICON.arrow}</b></div>
+        <div class="mascot__body"><img src="img/mascot.png" alt="${t('mascot.alt')}" width="424" height="621" loading="lazy"></div>
       </div>` : '') + '<div class="toasts" id="toasts"></div><div class="grain"></div><div class="cursor"><span>' + t('cursor.view') + '</span></div><div class="cursor-dot"></div><div class="page-fade"></div>');
   }
 
@@ -447,6 +451,22 @@
       btn.addEventListener('click', (e) => { e.stopPropagation(); set(!chat.classList.contains('open')); });
       document.addEventListener('click', (e) => { if (!e.target.closest('#chat')) set(false); });
       addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+
+      // maskota: uđe malo nakon učitavanja, pozdravi, klik otvara kontakt; "Sakrij" vrijedi do kraja posjete
+      const m = $('#mascot');
+      const page = document.body.dataset.page;
+      if (m && page !== 'checkout' && !sessionStorage.getItem('wiena_mascot_off')) {
+        const delay = page === 'home' && !sessionStorage.getItem('wiena_mascot_seen') ? 3200 : 1400;
+        sessionStorage.setItem('wiena_mascot_seen', '1');
+        setTimeout(() => { m.classList.add('in'); setTimeout(() => m.classList.add('talk'), 900); setTimeout(() => m.classList.remove('talk'), 12000); }, delay);
+        m.addEventListener('mouseenter', () => m.classList.add('talk'));
+        m.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (e.target.closest('[data-mascot-hide]')) { m.classList.remove('in', 'talk'); sessionStorage.setItem('wiena_mascot_off', '1'); return; }
+          m.classList.remove('talk'); set(true);
+        });
+        btn.addEventListener('click', () => m.classList.remove('talk'));
+      } else if (m) m.remove();
     }
 
     const search = $('#search'), input = $('#searchInput');
