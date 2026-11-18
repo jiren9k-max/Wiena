@@ -502,7 +502,7 @@
   cursor();
   transitions();
 
-  window.SITE = { $, $, esc, contact, contactVars, money, t, L, card, observe, parallax, ICON, store, addToCart, toggleWish, toast, openCart: () => openDrawer($('#cart')), openDrawer, closeDrawers, loader };
+  window.SITE = { $, $$, esc, contact, contactVars, money, t, L, card, observe, parallax, ICON, store, addToCart, toggleWish, toast, openCart: () => openDrawer($('#cart')), openDrawer, closeDrawers, loader };
 
   document.addEventListener('DOMContentLoaded', () => {});
 })();
