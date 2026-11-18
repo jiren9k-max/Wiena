@@ -162,7 +162,7 @@
 
     // ── footer
     'f.lead': ['Prirodni tekstil, tkan polako i napravljen da traje decenijama.', 'Natural textiles, woven slowly and made to be lived with for decades.'],
-    'f.address': ['Studio i izložbeni salon<br>{addr}<br><a href="{tel}">{phone}</a><br>Uto–Sub · 10:00–18:00', 'Studio &amp; Showroom<br>{addr}<br><a href="{tel}">{phone}</a><br>Tue–Sat · 10:00–18:00'],
+    'f.address': ['{addr}<br><a href="{tel}">{phone}</a><br>Uto–Sub · 10:00–18:00', '{addr}<br><a href="{tel}">{phone}</a><br>Tue–Sat · 10:00–18:00'],
     'f.shop': ['Kupovina', 'Shop'],
     'f.help': ['Pomoć', 'Help'],
     'f.sale': ['Rasprodaja', 'Sale'],
