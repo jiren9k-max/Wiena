@@ -20,6 +20,7 @@
     'ann.2': ['Tkano od prirodnih vlakana u Evropi', 'Woven from natural fibres in Europe'],
     'ann.3': ['Povrat u roku od 30 dana', '30-day returns'],
     'ann.4': ['Poklon pakovanje uz svaku narudžbu', 'Gift wrapping on every order'],
+    'ann.0': ['Pozovite nas ili pišite na WhatsApp: {phone}', 'Call or WhatsApp us: {phone}'],
     'ann.5': ['Novo: kolekcija Jesen/Zima', 'New: The Autumn/Winter Edit'],
 
     // ── header / nav
@@ -122,6 +123,15 @@
     'co.kmNote': ['', 'Charged in convertible marks (KM): {km}'],
     'co.place': ['Naruči · {p}', 'Place order · {p}'],
     'co.placing': ['Šaljem narudžbu…', 'Placing your order…'],
+    'co.help': ['Pomoć oko narudžbe? Pozovite <a href="{tel}">{phone}</a> ili pišite na <a href="{wa}" target="_blank" rel="noopener">WhatsApp</a>.', 'Need help with your order? Call <a href="{tel}">{phone}</a> or message us on <a href="{wa}" target="_blank" rel="noopener">WhatsApp</a>.'],
+    'chat.open': ['Kontaktirajte nas', 'Contact us'],
+    'chat.t': ['Tu smo za vas', 'We are here to help'],
+    'chat.s': ['Pitanje o proizvodu, veličini ili dostavi? Javite se, odgovaramo brzo.', 'A question about a product, size or delivery? Get in touch, we reply quickly.'],
+    'chat.wa': ['Pišite na WhatsApp', 'Message on WhatsApp'],
+    'chat.viber': ['Pišite na Viber', 'Message on Viber'],
+    'chat.call': ['Pozovite', 'Call'],
+    'chat.hours': ['Uto–Sub · 10:00–18:00', 'Tue–Sat · 10:00–18:00'],
+    'pdp.ask': ['Imate pitanje o ovom proizvodu? Pozovite <a href="{tel}">{phone}</a> ili pišite na <a href="{wa}" target="_blank" rel="noopener">WhatsApp</a>.', 'Questions about this piece? Call <a href="{tel}">{phone}</a> or message us on <a href="{wa}" target="_blank" rel="noopener">WhatsApp</a>.'],
     'co.terms': ['Klikom na „Naruči“ prihvatate uslove kupovine. Plaćanje karticom nije potrebno.', 'By placing your order you accept our terms of sale. No card payment needed.'],
     'co.empty': ['Vaša korpa je prazna.', 'Your bag is empty.'],
     'co.back': ['Nazad u kolekciju', 'Back to the collection'],
@@ -148,7 +158,7 @@
 
     // ── footer
     'f.lead': ['Prirodni tekstil, tkan polako i napravljen da traje decenijama.', 'Natural textiles, woven slowly and made to be lived with for decades.'],
-    'f.address': ['Studio i izložbeni salon<br>{addr}<br>{phone}<br>Uto–Sub · 10:00–18:00', 'Studio &amp; Showroom<br>{addr}<br>{phone}<br>Tue–Sat · 10:00–18:00'],
+    'f.address': ['Studio i izložbeni salon<br>{addr}<br><a href="{tel}">{phone}</a><br>Uto–Sub · 10:00–18:00', 'Studio &amp; Showroom<br>{addr}<br><a href="{tel}">{phone}</a><br>Tue–Sat · 10:00–18:00'],
     'f.shop': ['Kupovina', 'Shop'],
     'f.help': ['Pomoć', 'Help'],
     'f.sale': ['Rasprodaja', 'Sale'],

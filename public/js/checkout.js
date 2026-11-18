@@ -65,7 +65,7 @@
           <div class="co-sums" id="coSums"></div>
           <div class="co-err" id="coErr" hidden></div>
           <button class="btn btn--solid btn--block" type="submit" id="coSubmit"></button>
-          <p class="co-terms">${t('co.terms')}</p>
+          <p class="co-terms">${t('co.terms')}</p>${S.contact.ok ? `<p class="co-help">${t('co.help', S.contactVars)}</p>` : ''}
         </div>
       </aside>
     </form>`;

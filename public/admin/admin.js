@@ -732,7 +732,7 @@ async function settingsView() {
     <div class="err" hidden></div>
     <div class="card"><div class="card-h"><h3>Prodavnica</h3></div><div class="card-b form">
       ${inp("shop_name", "Naziv firme", "prikazuje se u podnožju sajta, emailovima i podacima za uplatu")}${inp("company_jib", "JIB", "identifikacioni broj firme")}${inp("shop_email", "Email za kupce")}
-      ${inp("shop_phone", "Telefon")}${inp("shop_address", "Adresa studija", "prikazuje se u podnožju sajta i za preuzimanje")}
+      ${inp("shop_phone", "Kontakt telefon", "na sajtu: dugme za poziv, WhatsApp i Viber")}${inp("shop_address", "Adresa studija", "prikazuje se u podnožju sajta i za preuzimanje")}
       ${inp("order_notify_email", "Email za obavijesti o narudžbama", "ovdje stižu nove narudžbe i poruke")}
     </div></div>
     <div class="card"><div class="card-h"><h3>Dostava i plaćanje</h3></div><div class="card-b form">

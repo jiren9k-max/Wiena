@@ -207,7 +207,7 @@ const DEFAULT_SETTINGS = {
   shop_name: "Wiena Group d.o.o.",
   company_jib: "4203027710002",   // JIB (identifikacioni broj) — prikazuje se u podnožju sajta i emailova
   shop_email: "hello@wiena.ba",
-  shop_phone: "+387 33 000 000",
+  shop_phone: "062 215 251",   // poziv, WhatsApp i Viber na sajtu
   shop_address: "Kurta Schorka 24A, 71000 Sarajevo",
   order_notify_email: "hello@wiena.ba",
   shipping_fee: "10",          // KM; 0 = besplatna dostava

@@ -45,6 +45,7 @@
       </div>
 
       ${!p.soldOut && p.stock != null && p.stock <= 3 ? `<p class="pdp__low" data-reveal style="--i:6">${t('pdp.low', { n: p.stock })}</p>` : ''}
+      ${S.contact.ok ? `<p class="pdp__ask" data-reveal style="--i:7">${S.ICON.chat}<span>${t('pdp.ask', S.contactVars)}</span></p>` : ''}
       <div class="perks" data-reveal style="--i:7">
         <div>${I.truck}<span>${t('pdp.perk1')}</span></div>
         <div>${I.return}<span>${t('pdp.perk2')}</span></div>

@@ -9,6 +9,15 @@
   L.apply(document);
   const FREE_SHIP = L.freeShip; // display currency (300 KM / €150)
 
+  /* ───────────── contact (phone from Admin → Postavke) ───────────── */
+  const contact = (() => {
+    const phone = String((W.settings && W.settings.shop_phone) || '').trim();
+    let d = phone.replace(/\D/g, '');
+    if (d.indexOf('00') === 0) d = d.slice(2); else if (d.charAt(0) === '0') d = '387' + d.slice(1);
+    return { phone, ok: d.length >= 8, tel: 'tel:+' + d, wa: 'https://wa.me/' + d, viber: 'viber://chat?number=%2B' + d };
+  })();
+  const contactVars = { phone: esc(contact.phone), tel: contact.tel, wa: contact.wa };
+
   const ICON = {
     search: '<svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>',
     heart: '<svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>',
@@ -21,6 +30,8 @@
     leaf: '<svg viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c0 10-5 15-14 15zM5 19l8-8"/></svg>',
     return: '<svg viewBox="0 0 24 24"><path d="M4 9h11a5 5 0 0 1 0 10H8"/><path d="M8 5L4 9l4 4"/></svg>',
     gift: '<svg viewBox="0 0 24 24"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg>',
+    chat: '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9.5h8M8 12.5h5"/></svg>',
+    phone: '<svg viewBox="0 0 24 24"><path d="M5 4h4l1.5 4.5-2.2 1.4a11 11 0 0 0 5.8 5.8l1.4-2.2L20 15v4a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.6A1.5 1.5 0 0 1 5 4z"/></svg>',
     needle: '<svg viewBox="0 0 24 24"><path d="M4 20L18 6M15 4l5 5M16 5l3 3"/><path d="M6 13c-3 1-3 5 1 5"/></svg>'
   };
 
@@ -108,7 +119,7 @@
     const homeCats = W.CATS.filter((c) => !c.textile);
 
     const announce = `<div class="announce"><div class="announce__track">${Array(2).fill(
-      [1, 2, 3, 4, 5].filter((n) => n !== 1 || FREE_SHIP > 0).map((n) => `<span>${t('ann.' + n, { x: L.fmt(FREE_SHIP) })}</span>`).join('')
+      [0, 1, 2, 3, 4, 5].filter((n) => (n !== 1 || FREE_SHIP > 0) && (n !== 0 || contact.ok)).map((n) => `<span>${t('ann.' + n, { x: L.fmt(FREE_SHIP), phone: esc(contact.phone) })}</span>`).join('')
     ).join('')}</div></div>`;
 
     const header = `<header class="header" id="header">
@@ -160,9 +171,9 @@
     const footer = `<footer class="footer">
       <div class="footer__grid">
         <div><p class="footer__lead">${t('f.lead')}</p>
-          <p style="max-width:340px;font-size:14px">${t('f.address', { addr: esc(W.settings.shop_address || ''), phone: esc(W.settings.shop_phone || '') })}</p></div>
+          <p style="max-width:340px;font-size:14px">${t('f.address', Object.assign({ addr: esc(W.settings.shop_address || '') }, contactVars))}</p></div>
         <div><h5>${t('f.shop')}</h5><ul>${textileCats.slice(0, 5).map((c) => `<li><a href="shop.html?cat=${c.key}">${c.label}</a></li>`).join('')}<li><a href="shop.html?view=sale">${t('f.sale')}</a></li></ul></div>
-        <div><h5>${t('f.help')}</h5><ul><li><a href="#">${t('f.shipping')}</a></li><li><a href="#">${t('f.returns')}</a></li><li><a href="#">${t('f.care')}</a></li><li><a href="#">${t('f.size')}</a></li><li><a href="#">${t('f.contact')}</a></li></ul></div>
+        <div><h5>${t('f.help')}</h5><ul><li><a href="#">${t('f.shipping')}</a></li><li><a href="#">${t('f.returns')}</a></li><li><a href="#">${t('f.care')}</a></li><li><a href="#">${t('f.size')}</a></li><li><a href="${contact.ok ? contact.wa : '#'}" target="_blank" rel="noopener">${t('f.contact')}</a></li></ul></div>
         <div><h5>Wiena</h5><ul><li><a href="index.html#story">${t('f.story')}</a></li><li><a href="#">${t('f.mills')}</a></li><li><a href="#">${t('f.journal')}</a></li><li><a href="#">${t('f.trade')}</a></li><li><a href="#">Instagram</a></li></ul></div>
       </div>
       <div class="footer__big">WIENA</div>
@@ -173,7 +184,16 @@
     const main = $('main');
     main.insertAdjacentHTML('afterend', footer);
     document.body.insertAdjacentHTML('beforeend', cart + search +
-      '<div class="toasts" id="toasts"></div><div class="grain"></div><div class="cursor"><span>' + t('cursor.view') + '</span></div><div class="cursor-dot"></div><div class="page-fade"></div>');
+      (contact.ok ? `<div class="chat" id="chat">
+        <div class="chat__panel" role="dialog" aria-label="${t('chat.open')}">
+          <p class="chat__t">${t('chat.t')}</p><p class="chat__s">${t('chat.s')}</p>
+          <a class="chat__opt" href="${contact.wa}" target="_blank" rel="noopener"><i style="background:#25d366"></i>${t('chat.wa')}</a>
+          <a class="chat__opt" href="${contact.viber}"><i style="background:#7360f2"></i>${t('chat.viber')}</a>
+          <a class="chat__opt" href="${contact.tel}">${ICON.phone}${t('chat.call')} · ${esc(contact.phone)}</a>
+          <p class="chat__h">${t('chat.hours')}</p>
+        </div>
+        <button class="chat__btn" aria-label="${t('chat.open')}" aria-expanded="false">${ICON.chat}${ICON.close}</button>
+      </div>` : '') + '<div class="toasts" id="toasts"></div><div class="grain"></div><div class="cursor"><span>' + t('cursor.view') + '</span></div><div class="cursor-dot"></div><div class="page-fade"></div>');
   }
 
   /* ───────────── cart drawer ───────────── */
@@ -420,6 +440,15 @@
       }
     });
 
+    const chat = $('#chat');
+    if (chat) {
+      const btn = chat.querySelector('.chat__btn');
+      const set = (open) => { chat.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); };
+      btn.addEventListener('click', (e) => { e.stopPropagation(); set(!chat.classList.contains('open')); });
+      document.addEventListener('click', (e) => { if (!e.target.closest('#chat')) set(false); });
+      addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });
+    }
+
     const search = $('#search'), input = $('#searchInput');
     $('.js-search').addEventListener('click', () => { search.classList.add('open'); document.body.classList.add('lock'); setTimeout(() => input.focus(), 300); });
     $('.js-close-search').addEventListener('click', () => { search.classList.remove('open'); document.body.classList.remove('lock'); });
@@ -453,7 +482,7 @@
   cursor();
   transitions();
 
-  window.SITE = { $, $$, esc, money, t, L, card, observe, parallax, ICON, store, addToCart, toggleWish, toast, openCart: () => openDrawer($('#cart')), openDrawer, closeDrawers, loader };
+  window.SITE = { $, $, esc, contact, contactVars, money, t, L, card, observe, parallax, ICON, store, addToCart, toggleWish, toast, openCart: () => openDrawer($('#cart')), openDrawer, closeDrawers, loader };
 
   document.addEventListener('DOMContentLoaded', () => {});
 })();
