@@ -18,7 +18,7 @@ function build() {
 
   const data = {
     settings: {
-      shop_name: s.shop_name, company_jib: s.company_jib || "", shop_email: s.shop_email, shop_phone: s.shop_phone, shop_address: s.shop_address,
+      shop_name: s.shop_name, company_jib: s.company_jib || "", company_pdv: s.company_pdv || "", shop_email: s.shop_email, shop_phone: s.shop_phone, shop_address: s.shop_address,
       shipping_fee: feeKm, free_shipping_over: freeKm, shipping_fee_eur: eur(feeKm), free_shipping_over_eur: freeKm ? Math.max(10, Math.round(freeKm / EUR_BAM / 10) * 10) : 0,
       pickup: s.pickup_enabled === "1",
     },

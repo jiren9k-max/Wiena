@@ -48,7 +48,7 @@ function layout(s, title, body) {
 <tr><td align="center" style="padding:30px 32px 22px;border-bottom:1px solid #e4dccd"><a href="${SITE_URL}" style="font-family:${SERIF};font-size:30px;letter-spacing:.32em;color:#112e51;text-decoration:none"><img src="${SITE_URL}/img/logo.png" alt="WIENA HOME" width="120" style="width:120px;height:auto;display:block;margin:0 auto;border:0"></a></td></tr>
 <tr><td style="padding:34px 36px;font-size:15px;line-height:1.65">${body}</td></tr>
 <tr><td style="padding:22px 36px;border-top:1px solid #e4dccd;font-size:12px;color:#7a7268;line-height:1.7">
-${esc(s.shop_name)}${s.company_jib ? " · JIB " + esc(s.company_jib) : ""}<br>${esc(s.shop_address || "")}<br>${esc(s.shop_phone)} · <a href="mailto:${esc(s.shop_email)}" style="color:#8a5a3c">${esc(s.shop_email)}</a></td></tr>
+${esc(s.shop_name)}${s.company_jib ? " · JIB " + esc(s.company_jib) : ""}${s.company_pdv ? " · PDV " + esc(s.company_pdv) : ""}<br>${esc(s.shop_address || "")}<br>${esc(s.shop_phone)} · <a href="mailto:${esc(s.shop_email)}" style="color:#8a5a3c">${esc(s.shop_email)}</a></td></tr>
 </table></td></tr></table></body></html>`;
 }
 

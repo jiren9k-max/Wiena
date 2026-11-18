@@ -177,7 +177,7 @@
         <div><h5>Wiena</h5><ul><li><a href="index.html#story">${t('f.story')}</a></li><li><a href="#">${t('f.mills')}</a></li><li><a href="#">${t('f.journal')}</a></li><li><a href="#">${t('f.trade')}</a></li><li><a href="#">Instagram</a></li></ul></div>
       </div>
       <div class="footer__big" role="img" aria-label="WIENA Home"><i></i></div>
-      <div class="footer__bottom"><span>${t('f.copy', { year: new Date().getFullYear(), name: esc(W.settings.shop_name || 'Wiena Group d.o.o.'), jib: W.settings.company_jib ? ' · JIB ' + esc(W.settings.company_jib) : '' })}</span><div class="pay"><span>${t('f.pay1')}</span><span>${t('f.pay2')}</span></div><span>${t('f.legal')}</span></div>
+      <div class="footer__bottom"><span>${t('f.copy', { year: new Date().getFullYear(), name: esc(W.settings.shop_name || 'Wiena Group d.o.o.'), jib: (W.settings.company_jib ? ' · JIB ' + esc(W.settings.company_jib) : '') + (W.settings.company_pdv ? ' · PDV ' + esc(W.settings.company_pdv) : '') })}</span><div class="pay"><span>${t('f.pay1')}</span><span>${t('f.pay2')}</span></div><span>${t('f.legal')}</span></div>
     </footer>`;
 
     document.body.insertAdjacentHTML('afterbegin', announce + header + mobile);

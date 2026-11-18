@@ -1,6 +1,6 @@
 # WIENA — web shop za prirodni tekstil
 
-Firma: **Wiena Group d.o.o.**, Kurta Schorka 24A, 71000 Sarajevo · JIB 4203027710002
+Firma: **Wiena Group d.o.o.**, Kurta Schorka 24A, 71160 Sarajevo (Novi Grad) · JIB 4203027710002 · PDV 203027710002
 
 Shop (bosanski + engleski), narudžbe, zaliha, emailovi i admin panel za upravljanje svime.
 Katalog: 100 proizvoda (80 tekstil, 20 dom i mirisi), cijene u KM (engleska verzija u €).

@@ -206,14 +206,15 @@ if (!orderCols.includes("discount")) db.exec("ALTER TABLE orders ADD COLUMN disc
 const DEFAULT_SETTINGS = {
   shop_name: "Wiena Group d.o.o.",
   company_jib: "4203027710002",   // JIB (identifikacioni broj) — prikazuje se u podnožju sajta i emailova
+  company_pdv: "203027710002",    // PDV broj (UIO) — u PDV sistemu od 08.07.2022.
   shop_email: "hello@wiena.ba",
   shop_phone: "+387 62 215 251",   // poziv, WhatsApp i Viber na sajtu
-  shop_address: "Kurta Schorka 24A, 71000 Sarajevo",
+  shop_address: "Kurta Schorka 24A, 71160 Sarajevo",
   order_notify_email: "hello@wiena.ba",
   shipping_fee: "10",          // KM; 0 = besplatna dostava
   free_shipping_over: "300",   // KM; 0 = isključeno
   pickup_enabled: "1",         // preuzimanje u studiju
-  bank_details: "Wiena Group d.o.o.\nKurta Schorka 24A, 71000 Sarajevo\nBroj računa: (unesite u postavkama)\nSvrha: Narudžba {broj}",
+  bank_details: "Wiena Group d.o.o.\nKurta Schorka 24A, 71160 Sarajevo\nBroj računa: (unesite u postavkama)\nSvrha: Narudžba {broj}",
   smtp_host: "", smtp_port: "587", smtp_user: "", smtp_pass: "", smtp_from: "",
 };
 const insertSetting = db.prepare("INSERT OR IGNORE INTO settings(key, value) VALUES (?, ?)");

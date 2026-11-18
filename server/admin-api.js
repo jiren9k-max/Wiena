@@ -454,9 +454,9 @@ module.exports = function adminRoutes(r) {
   }));
 
   /* ---------- Postavke ---------- */
-  const EDITABLE = ["shop_name", "company_jib", "shop_email", "shop_phone", "shop_address", "pickup_enabled", "order_notify_email", "shipping_fee", "free_shipping_over", "bank_details", "smtp_host", "smtp_port", "smtp_user", "smtp_pass", "smtp_from"];
+  const EDITABLE = ["shop_name", "company_jib", "company_pdv", "shop_email", "shop_phone", "shop_address", "pickup_enabled", "order_notify_email", "shipping_fee", "free_shipping_over", "bank_details", "smtp_host", "smtp_port", "smtp_user", "smtp_pass", "smtp_from"];
   const SETTING_LABELS = {
-    shop_name: "Naziv firme", company_jib: "JIB", shop_email: "Email za kupce", shop_phone: "Telefon", shop_address: "Adresa studija", pickup_enabled: "Preuzimanje u studiju",
+    shop_name: "Naziv firme", company_jib: "JIB", company_pdv: "PDV broj", shop_email: "Email za kupce", shop_phone: "Telefon", shop_address: "Adresa studija", pickup_enabled: "Preuzimanje u studiju",
     order_notify_email: "Email za obavijesti", shipping_fee: "Cijena dostave", free_shipping_over: "Besplatna dostava iznad",
     bank_details: "Podaci za uplatu", smtp_host: "SMTP server", smtp_port: "SMTP port", smtp_user: "SMTP korisnik", smtp_pass: "SMTP lozinka", smtp_from: "Pošiljalac",
   };
