@@ -1188,3 +1188,27 @@ body.has-hero .header:not(.solid):not(.menu-open) .count b { color: var(--dark);
 .pdp__ask a, .co-help a, .footer a[href^="tel:"] { text-decoration: underline; text-underline-offset: 3px; }
 .co-help { font-size: 13px; color: var(--ink-2); margin-top: 10px; line-height: 1.6; }
 @media (max-width: 600px) { .chat__btn { width: 52px; height: 52px; } .chat__panel { bottom: 66px; } }
+
+/* ───────── WIENA HOME logo ───────── */
+:root { --brand: #112e51; }
+.logo { display: inline-flex; align-items: center; gap: 12px; padding: 0; letter-spacing: 0; color: var(--brand); justify-self: center; transition: color 0.5s var(--ease); }
+body.has-hero .header:not(.solid):not(.menu-open) .logo { color: var(--cream); }
+.logo i { display: block; background: currentColor; -webkit-mask: var(--m) center / contain no-repeat; mask: var(--m) center / contain no-repeat; }
+.logo__mark { --m: url(../img/mark.png); width: 48px; height: 44px; }
+.logo__txt { display: grid; justify-items: center; gap: 5px; }
+.logo__word { --m: url(../img/word.png); width: 92px; height: 18px; }
+.logo__home { --m: url(../img/home.png); width: 36px; height: 8px; }
+@media (max-width: 900px) {
+  .logo { gap: 9px; }
+  .logo__mark { width: 39px; height: 36px; }
+  .logo__word { width: 76px; height: 15px; }
+  .logo__home { width: 31px; height: 7px; }
+}
+.loader__logo { display: grid; justify-items: center; gap: clamp(14px, 2vw, 22px); }
+.loader__logo img { display: block; height: auto; opacity: 0; transform: translateY(30%); filter: blur(12px); animation: letterIn 1.3s var(--ease) forwards; animation-delay: calc(var(--i) * 90ms + 150ms); }
+.loader__logo img:nth-child(1) { width: clamp(96px, 12vw, 150px); }
+.loader__logo img:nth-child(2) { width: clamp(220px, 30vw, 380px); }
+.loader__logo img:nth-child(3) { width: clamp(108px, 15vw, 188px); margin-top: -4px; }
+.footer__logo { display: block; width: 140px; height: auto; margin-bottom: 26px; opacity: 0.92; }
+.footer__big { display: flex; justify-content: center; background: none; padding-left: 0; }
+.footer__big i { display: block; width: min(86vw, 1100px); aspect-ratio: 734 / 145; background: linear-gradient(to bottom, rgba(244, 237, 225, 0.6), rgba(244, 237, 225, 0.04)); -webkit-mask: url(../img/word.png) center / contain no-repeat; mask: url(../img/word.png) center / contain no-repeat; }

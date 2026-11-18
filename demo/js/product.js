@@ -7,7 +7,7 @@
   let size = p.sizes.length === 1 ? p.sizes[0] : null;
   let qty = 1;
 
-  document.title = `${p.name}, ${p.colour} | WIENA`;
+  document.title = `${p.name}, ${p.colour} | WIENA Home`;
   $('#crumbs').innerHTML = `<a href="index.html">${t('shop.home')}</a><span>/</span><a href="shop.html">${t('shop.shop')}</a><span>/</span><a href="shop.html?cat=${p.cat}">${p.catLabel}</a><span>/</span>${p.name}`;
 
   const stars = '★★★★★'.slice(0, Math.round(p.rating)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(p.rating));

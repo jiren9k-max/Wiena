@@ -131,7 +131,7 @@
         <a href="index.html#story">${t('nav.journal')}</a>
       </nav>
       <button class="burger js-burger" aria-label="${t('nav.menu')}"><span></span><span></span></button>
-      <a href="index.html" class="logo" aria-label="WIENA, ${t('shop.home').toLowerCase()}">WIENA<small>${t('nav.tagline')}</small></a>
+      <a href="index.html" class="logo" aria-label="WIENA Home, ${t('shop.home').toLowerCase()}"><i class="logo__mark"></i><span class="logo__txt"><i class="logo__word"></i><i class="logo__home"></i></span></a>
       <div class="header__right">
         <div class="lang" role="group" aria-label="${t('lang.label')}"><button data-lang="bs" class="${L.lang === 'bs' ? 'on' : ''}" lang="bs">BS</button><i></i><button data-lang="en" class="${L.lang === 'en' ? 'on' : ''}" lang="en">EN</button></div>
         <button class="icon-link js-search" aria-label="${t('nav.search')}">${ICON.search}<span class="label">${t('nav.search')}</span></button>
@@ -170,13 +170,13 @@
 
     const footer = `<footer class="footer">
       <div class="footer__grid">
-        <div><p class="footer__lead">${t('f.lead')}</p>
+        <div><img class="footer__logo" src="img/logo-light.png" alt="WIENA Home" width="140" height="113"><p class="footer__lead">${t('f.lead')}</p>
           <p style="max-width:340px;font-size:14px">${t('f.address', Object.assign({ addr: esc(W.settings.shop_address || '') }, contactVars))}</p></div>
         <div><h5>${t('f.shop')}</h5><ul>${textileCats.slice(0, 5).map((c) => `<li><a href="shop.html?cat=${c.key}">${c.label}</a></li>`).join('')}<li><a href="shop.html?view=sale">${t('f.sale')}</a></li></ul></div>
         <div><h5>${t('f.help')}</h5><ul><li><a href="#">${t('f.shipping')}</a></li><li><a href="#">${t('f.returns')}</a></li><li><a href="#">${t('f.care')}</a></li><li><a href="#">${t('f.size')}</a></li><li><a href="${contact.ok ? contact.wa : '#'}" target="_blank" rel="noopener">${t('f.contact')}</a></li></ul></div>
         <div><h5>Wiena</h5><ul><li><a href="index.html#story">${t('f.story')}</a></li><li><a href="#">${t('f.mills')}</a></li><li><a href="#">${t('f.journal')}</a></li><li><a href="#">${t('f.trade')}</a></li><li><a href="#">Instagram</a></li></ul></div>
       </div>
-      <div class="footer__big">WIENA</div>
+      <div class="footer__big" role="img" aria-label="WIENA Home"><i></i></div>
       <div class="footer__bottom"><span>${t('f.copy', { year: new Date().getFullYear(), name: esc(W.settings.shop_name || 'Wiena Group d.o.o.'), jib: W.settings.company_jib ? ' · JIB ' + esc(W.settings.company_jib) : '' })}</span><div class="pay"><span>${t('f.pay1')}</span><span>${t('f.pay2')}</span></div><span>${t('f.legal')}</span></div>
     </footer>`;
 
@@ -466,7 +466,7 @@
     sessionStorage.setItem('wiena_loaded', '1');
     const el = document.createElement('div');
     el.className = 'loader';
-    el.innerHTML = `<div class="loader__inner"><div class="loader__word">${'WIENA'.split('').map((l, i) => `<span style="--i:${i}">${l}</span>`).join('')}</div>
+    el.innerHTML = `<div class="loader__inner"><div class="loader__logo"><img src="img/mark-light.png" alt="" style="--i:0"><img src="img/word-light.png" alt="WIENA" style="--i:3"><img src="img/home-light.png" alt="Home" style="--i:5"></div>
       <div class="loader__line"></div><div class="loader__sub eyebrow">${t('loader.sub')}</div></div>`;
     document.body.appendChild(el);
     document.body.classList.add('lock');

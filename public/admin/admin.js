@@ -122,7 +122,7 @@ const ownerOnlyPage = () => `<div class="empty">${ic("lock")}<br>Ova stranica je
 function shell(active, html) {
   return `<div class="shell">
     <aside class="side">
-      <a class="brand" href="#/"><span class="wordmark">WIENA</span><small>Admin panel</small></a>
+      <a class="brand" href="#/"><img class="brand-logo" src="/img/logo-light.png" alt="WIENA Home"><small>Admin panel</small></a>
       <nav class="nav">${NAV.filter(([, , , , owner]) => !owner || isOwner()).map(([k, t, i, b]) => `<a href="#/${k}" class="${active === k ? "on" : ""}">${ic(i)}<span>${t}</span>${b && badges[b] ? `<span class="count">${badges[b]}</span>` : ""}</a>`).join("")}</nav>
       <div class="side-foot">
         <a class="who" href="#/profil" title="Moj profil"><b>${esc(myName())}</b><span class="role-tag role-${me.role}">${ROLE_NAMES[me.role] || ""}</span></a>
@@ -190,7 +190,7 @@ async function render() {
 
 /* ---------- Login ---------- */
 const loginView = () => `<div class="login"><form data-f="login">
-  <span class="wordmark big">WIENA</span><div style="text-align:center"><h1>Admin prijava</h1><p class="muted">Web shop za prirodni tekstil</p></div>
+  <img class="login-logo" src="/img/logo.png" alt="WIENA Home"><div style="text-align:center"><h1>Admin prijava</h1><p class="muted">Web shop za prirodni tekstil</p></div>
   <div class="err" hidden></div>
   <label class="lbl">Email<input class="input" name="email" type="email" required autocomplete="username"></label>
   <label class="lbl">Lozinka<input class="input" name="password" type="password" required autocomplete="current-password"></label>
@@ -199,7 +199,7 @@ const loginView = () => `<div class="login"><form data-f="login">
 </form></div>`;
 
 const forgotView = () => `<div class="login"><form data-f="forgot">
-  <span class="wordmark big">WIENA</span><div style="text-align:center"><h1>Nova lozinka</h1><p class="muted">Unesite svoj email — poslat ćemo vam link za novu lozinku (vrijedi 1 sat).</p></div>
+  <img class="login-logo" src="/img/logo.png" alt="WIENA Home"><div style="text-align:center"><h1>Nova lozinka</h1><p class="muted">Unesite svoj email — poslat ćemo vam link za novu lozinku (vrijedi 1 sat).</p></div>
   <div class="err" hidden></div>
   <label class="lbl">Email<input class="input" name="email" type="email" required autocomplete="username"></label>
   <button class="btn dark" style="justify-content:center;height:44px" type="submit">Pošalji link</button>
@@ -207,7 +207,7 @@ const forgotView = () => `<div class="login"><form data-f="forgot">
 </form></div>`;
 
 const resetView = (token) => `<div class="login"><form data-f="reset">
-  <span class="wordmark big">WIENA</span><div style="text-align:center"><h1>Postavite novu lozinku</h1><p class="muted">Najmanje 8 znakova.</p></div>
+  <img class="login-logo" src="/img/logo.png" alt="WIENA Home"><div style="text-align:center"><h1>Postavite novu lozinku</h1><p class="muted">Najmanje 8 znakova.</p></div>
   <div class="err" hidden></div>
   <input type="hidden" name="token" value="${esc(token || "")}">
   <label class="lbl">Nova lozinka<input class="input" name="password" type="password" required minlength="8" autocomplete="new-password"></label>
@@ -1474,7 +1474,7 @@ document.addEventListener("submit", async (e) => {
       if (id) location.hash = "#/vauceri"; else render();
     } else if (kind === "forgot") {
       await api("/api/auth/forgot", { method: "POST", body: d });
-      form.innerHTML = `<span class="wordmark big">WIENA</span><div style="text-align:center"><h1>Provjerite email</h1>
+      form.innerHTML = `<img class="login-logo" src="/img/logo.png" alt="WIENA Home"><div style="text-align:center"><h1>Provjerite email</h1>
         <p class="muted">Ako je ${esc(d.email)} email vlasnika, poslali smo link za novu lozinku (vrijedi 1 sat). Ako email ne stigne, novu lozinku možete postaviti na računaru gdje radi shop: npm run create-admin -- email nova-lozinka</p></div>
         <a href="#" class="btn" data-act="login-open" style="justify-content:center">Nazad na prijavu</a>`;
     } else if (kind === "reset") {

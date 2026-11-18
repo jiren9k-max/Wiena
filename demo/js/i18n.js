@@ -12,7 +12,7 @@
 
   const D = {
     // ── meta
-    'meta.home': ['WIENA | Prirodni tekstil za sporiji život', 'WIENA | Natural Textiles for Slow Living'],
+    'meta.home': ['WIENA Home | Prirodni tekstil za sporiji život', 'WIENA Home | Natural Textiles for Slow Living'],
     'meta.desc': ['Posteljina od kamenom pranog lana, kašmirski pledovi, peškiri od turskog pamuka i tihi predmeti za dom. Tkano u Evropi, dizajnirano u Beču.', 'Stonewashed linen bedding, cashmere throws, Turkish cotton towels and quiet objects for the home. Woven in Europe, designed in Vienna.'],
 
     // ── announcement bar
@@ -88,7 +88,7 @@
     'f.pay2': ['Uplata na račun', 'Bank transfer'],
 
     // ── checkout
-    'co.meta': ['WIENA | Završetak narudžbe', 'WIENA | Checkout'],
+    'co.meta': ['WIENA Home | Završetak narudžbe', 'WIENA Home | Checkout'],
     'co.k': ['Sigurna narudžba', 'Secure checkout'],
     'co.title': ['Završetak <em class="italic">narudžbe</em>', 'Check<em class="italic">out</em>'],
     'co.contact': ['Kontakt podaci', 'Contact details'],
@@ -255,7 +255,7 @@
     'nl.thanks': ['Hvala vam. Pismo dobrodošlice je na putu. ✦', 'Thank you. Your welcome letter is on its way. ✦'],
 
     // ── shop
-    'shop.meta': ['Kolekcija | WIENA', 'Shop | WIENA'],
+    'shop.meta': ['Kolekcija | WIENA Home', 'Shop | WIENA Home'],
     'shop.home': ['Početna', 'Home'],
     'shop.shop': ['Kolekcija', 'Shop'],
     'shop.allCrumb': ['Sve', 'Shop All'],

@@ -57,7 +57,7 @@
     const B = PHOTOS.site.banners;
     const banner = B[state.cat] || B[state.room] || B[state.view] || B.all;
     $('#shopArt').innerHTML = Art.fabric(Object.assign({ w: 1600, h: 600, scale: 2.4, k: 0.3, folds: 8, angle: 20, seed: 21, vignette: 0.1 }, art)) + Art.photo(banner, 1920, '');
-    document.title = (crumb || t('shop.shop')).replace(/<[^>]+>/g, '') + ' | WIENA';
+    document.title = (crumb || t('shop.shop')).replace(/<[^>]+>/g, '') + ' | WIENA Home';
   }
 
   /* ───────── category tabs ───────── */
